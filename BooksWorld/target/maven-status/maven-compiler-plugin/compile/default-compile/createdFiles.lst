@@ -1,0 +1,4 @@
+com\niit\controllers\HomeController.class
+com\niit\controllers\SupplierController.class
+com\niit\controllers\ProductController.class
+com\niit\controllers\CategoryController.class

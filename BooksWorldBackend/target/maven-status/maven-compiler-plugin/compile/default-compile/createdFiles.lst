@@ -1,0 +1,12 @@
+com\niit\BooksWorldBackend\DAO\CategoryDao.class
+com\niit\BooksWorldBackend\DaoImpl\CategoryDaoImpl.class
+com\niit\BooksWorldBackend\model\Product.class
+com\niit\BooksWorldBackend\config\HibernateConfig.class
+com\niit\BooksWorldBackend\App.class
+com\niit\BooksWorldBackend\model\Category.class
+com\niit\BooksWorldBackend\DaoImpl\SupplierDaoImpl.class
+com\niit\BooksWorldBackend\DAO\UserDao.class
+com\niit\BooksWorldBackend\DAO\SupplierDao.class
+com\niit\BooksWorldBackend\DaoImpl\UserDaoImpl.class
+com\niit\BooksWorldBackend\model\User.class
+com\niit\BooksWorldBackend\model\Supplier.class
