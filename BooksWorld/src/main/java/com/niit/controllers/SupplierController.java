@@ -31,20 +31,20 @@ public class SupplierController
 		s.setSupName(supName);
 		s.setSupAddress(supAddress);
 		supDao.saveSupplier(s);
-		return "redirect:/Supplier";
+		return "redirect:/Admin";
 	}
 	@RequestMapping(value="/DeleteSup")
 	String DeleteSupplier(@RequestParam("supId") int supId)
 	{
 		Supplier s=supDao.getSupplier(supId);
 		supDao.deletSupplier(s);
-		return "redirect:/Supplier";
+		return "redirect:/Admin";
 	}
 	@RequestMapping(value="/UpdateSup")
 	String updateSupplier(@RequestParam("supId") int supId,Model m)
 	{
 		Supplier s=supDao.getSupplier(supId);
-		m.addAttribute("Supplier", s);
+		m.addAttribute("Supp", s);
 		return "SupplierUp";
 	}
 }

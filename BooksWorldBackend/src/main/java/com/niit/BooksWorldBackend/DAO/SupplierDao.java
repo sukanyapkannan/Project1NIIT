@@ -11,4 +11,5 @@ void deletSupplier(Supplier s);
 List<Supplier> getSuppliers();
 Supplier getSupplier(int supId);
 
+
 }

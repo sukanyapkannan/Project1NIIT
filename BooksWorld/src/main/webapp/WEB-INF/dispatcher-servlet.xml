@@ -19,7 +19,7 @@
    
    
 	<context:component-scan base-package="com.niit"/>
-
+<mvc:annotation-driven/>
 
    <bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -38,7 +38,7 @@
 		<property name="maxUploadSize" value="30000000" />
 
 </bean>
-	
+	<mvc:resources mapping="/resources/**" location="/resources/"  />
 
 	</beans>
 	

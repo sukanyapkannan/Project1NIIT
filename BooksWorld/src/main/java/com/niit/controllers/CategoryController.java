@@ -31,7 +31,7 @@ public class CategoryController
 		c.setCatName(catname);
 		c.setCatdescription(catdescription);
 		catDao.saveCategory(c);
-		return "redirect:/Category";
+		return "redirect:/Admin";
 	}
 	
 	@RequestMapping(value="/editCat")
@@ -42,14 +42,14 @@ public class CategoryController
 		c.setCatName(catname);
 		c.setCatdescription(catdescription);
 		catDao.updateCategory(c);
-		return "redirect:/Category";
+		return "redirect:/Admin";
 	}
 	@RequestMapping(value="/DeleteCat")
 	String DeleteCat(@RequestParam("catId") int catId)
 	{
 		Category c=catDao.getCategory(catId);
 		catDao.deleteCategory(c);
-		return "redirect:/Category";
+		return "redirect:/Admin";
 	}
 	@RequestMapping(value="/UpdateCat")
 	String updateCat(@RequestParam("catId") int catId,Model m)

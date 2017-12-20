@@ -5,9 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home Page</title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -92,19 +89,19 @@ body {font-family: Verdana,sans-serif;}
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="/resources/images/1.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
+  <img src="${pageContext.request.contextPath}/resources/1.jpg" style="width:100%">
+  <div class="text">1</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="/resources/images/2.jpg" style="width:100%">
+  <img src="${pageContext.request.contextPath}/resources/2.jpg" style="width:100%">
   <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="/resources/images/3.jpg" style="width:100%">
+  <img src="${pageContext.request.contextPath}/resources/3.jpg" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
