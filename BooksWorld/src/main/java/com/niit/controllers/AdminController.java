@@ -23,6 +23,19 @@ public class AdminController
 	ProductDao proDao;
 	
 	@RequestMapping("/Admin")
+	String Admina(Model m)
+	{
+		
+		return "redirect:/admin/Admin";
+	}
+	@RequestMapping("/admin")
+	String index(Model m)
+	{
+		
+		return "redirect:/";
+	}
+
+	@RequestMapping("/admin/Admin")
 	String Admin(Model m)
 	{
 		m.addAttribute("clist", catDao.getCategorys());

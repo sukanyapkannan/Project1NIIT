@@ -16,7 +16,7 @@ public class SupplierController
 {
 	@Autowired
 	SupplierDao supDao;
-	@RequestMapping("/Supplier")
+	@RequestMapping("/admin/Supplier")
 	String Supplier(Model m)
 	{
 		List<Supplier> slist=(List<Supplier>) supDao.getSuppliers();
@@ -24,7 +24,7 @@ public class SupplierController
 		m.addAttribute("slist", supDao.getSuppliers());
 		return "Supplier";
 	}
-	@RequestMapping(value="/saveSup")
+	@RequestMapping(value="/admin/saveSup")
 	String saveSupplier(@RequestParam("SupName")String supName,@RequestParam("SupAddress")String supAddress)
 	{
 		Supplier s=new Supplier();
@@ -33,18 +33,27 @@ public class SupplierController
 		supDao.saveSupplier(s);
 		return "redirect:/Admin";
 	}
-	@RequestMapping(value="/DeleteSup")
+	@RequestMapping(value="/admin/DeleteSup")
 	String DeleteSupplier(@RequestParam("supId") int supId)
 	{
 		Supplier s=supDao.getSupplier(supId);
 		supDao.deletSupplier(s);
 		return "redirect:/Admin";
 	}
-	@RequestMapping(value="/UpdateSup")
+	@RequestMapping(value="/admin/UpdateSup")
 	String updateSupplier(@RequestParam("supId") int supId,Model m)
 	{
 		Supplier s=supDao.getSupplier(supId);
-		m.addAttribute("Supp", s);
+		m.addAttribute("supp", s);
 		return "SupplierUp";
+	}
+	@RequestMapping(value="/admin/editSup")
+	String editSupplier(@RequestParam("SupName")String supName,@RequestParam("SupAddress")String supAddress)
+	{
+		Supplier s=new Supplier();
+		s.setSupName(supName);
+		s.setSupAddress(supAddress);
+		supDao.saveSupplier(s);
+		return "redirect:/Admin";
 	}
 }

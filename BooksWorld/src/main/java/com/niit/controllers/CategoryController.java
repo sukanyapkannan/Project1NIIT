@@ -16,7 +16,7 @@ public class CategoryController
 {
 	@Autowired
 	CategoryDao catDao;
-	@RequestMapping("/Category")
+	@RequestMapping("/admin/Category")
 	String category(Model m)
 	{
 		List<Category> clist=catDao.getCategorys();
@@ -24,7 +24,7 @@ public class CategoryController
 	m.addAttribute("clist", catDao.getCategorys());
 		return "Category";
 	}
-	@RequestMapping(value="/saveCat")
+	@RequestMapping(value="/admin/saveCat")
 	String saveCategory(@RequestParam("catname")String catname,@RequestParam("catdescription")String catdescription)
 	{
 		Category c=new Category();
@@ -34,7 +34,7 @@ public class CategoryController
 		return "redirect:/Admin";
 	}
 	
-	@RequestMapping(value="/editCat")
+	@RequestMapping(value="/admin/editCat")
 	String editCat(@RequestParam("catid")String catid,@RequestParam("catname")String catname,@RequestParam("catdescription")String catdescription)
 	{
 		Category c=new Category();
@@ -44,14 +44,14 @@ public class CategoryController
 		catDao.updateCategory(c);
 		return "redirect:/Admin";
 	}
-	@RequestMapping(value="/DeleteCat")
+	@RequestMapping(value="/admin/DeleteCat")
 	String DeleteCat(@RequestParam("catId") int catId)
 	{
 		Category c=catDao.getCategory(catId);
 		catDao.deleteCategory(c);
 		return "redirect:/Admin";
 	}
-	@RequestMapping(value="/UpdateCat")
+	@RequestMapping(value="/admin/UpdateCat")
 	String updateCat(@RequestParam("catId") int catId,Model m)
 	{
 		Category c=catDao.getCategory(catId);

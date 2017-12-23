@@ -4,12 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.validation.constraints.Min;
 
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,17 +21,20 @@ public class Product
 	@GeneratedValue(strategy=GenerationType.AUTO) //Automatically generate value for Id using sequence
 private int id; //product.setId(0)
 	
-@NotEmpty(message="Product name is mandatory")
+/*@NotEmpty(message="Product name is mandatory")*/
 private String productname;//product.setProductName("pen")
-@NotEmpty(message="Product description cannot be blank")
+/*@NotEmpty(message="Product description cannot be blank")*/
 private String productDescription;
 
 private int quantity;
-@Min(value=10,message="Minimum price is 10")
+/*@Min(value=10,message="Minimum price is 10")*/
 private double price;
 @ManyToOne
+@JoinColumn(name="CID")
 private Category category;//product.setCategory().setId(1)
-
+@ManyToOne
+@JoinColumn(name="SID")
+private Supplier supplier;
 
 public int getId() {
 	return id;
@@ -70,6 +72,13 @@ public Category getCategory() {
 public void setCategory(Category category) {
 	this.category = category;
 }
+public Supplier getSupplier() {
+	return supplier;
+}
+public void setSupplier(Supplier supplier) {
+	this.supplier = supplier;
+}
+
 
 
 }

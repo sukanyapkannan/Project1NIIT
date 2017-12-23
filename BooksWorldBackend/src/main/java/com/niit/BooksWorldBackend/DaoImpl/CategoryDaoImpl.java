@@ -50,6 +50,7 @@ public void deleteCategory(Category c)
 	s.delete(c);
 	s.getTransaction().commit();
 	s.close();
+	
 }
 public List<Category> getCategorys()
 {

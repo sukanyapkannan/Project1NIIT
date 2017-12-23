@@ -58,15 +58,15 @@ public void deletSupplier(Supplier s)
 public List<Supplier> getSuppliers()
 {
 	
-	Session s=sessionF.openSession();
-	List<Supplier> clist=s.createQuery("from Supplier").list();
-	return clist;
+	Session k=sessionF.openSession();
+	List<Supplier> slist=k.createQuery("from Supplier").list();
+	return slist;
 }
 public Supplier getSupplier(int supId)
 {
 	
-	Session s=sessionF.openSession();
-	Supplier c=(Supplier)s.get(Supplier.class, supId);
+	Session k=sessionF.openSession();
+	Supplier c=(Supplier)k.get(Supplier.class, supId);
 	return c;
 }
 

@@ -2,6 +2,7 @@ package com.niit.BooksWorldBackend.DaoImpl;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +65,14 @@ public class ProductDaoImpl implements ProductDao
 		Session s=sessionF.openSession();
 		Product p=(Product)s.get(Product.class,id);
 		return p;
+	}
+	public List<Product> retrieveProductByCat(int catId)
+	{
+		Session session=sessionF.openSession();
+		Query query=session.createQuery("from Product where CID="+catId);
+		List<Product> plist=query.list();
+		session.close();
+		return plist;
 	}
 	
 }

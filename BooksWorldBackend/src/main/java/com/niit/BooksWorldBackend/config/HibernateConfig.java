@@ -14,7 +14,9 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.BooksWorldBackend.model.Cart;
 import com.niit.BooksWorldBackend.model.Category;
+import com.niit.BooksWorldBackend.model.Orders;
 import com.niit.BooksWorldBackend.model.Product;
 import com.niit.BooksWorldBackend.model.Supplier;
 import com.niit.BooksWorldBackend.model.User;
@@ -36,6 +38,9 @@ public class HibernateConfig
 	        sessionBuilder.addAnnotatedClass(Category.class);
 	        sessionBuilder.addAnnotatedClass(Supplier.class);
 	        sessionBuilder.addAnnotatedClass(Product.class);
+	        sessionBuilder.addAnnotatedClass(Cart.class);
+	        sessionBuilder.addAnnotatedClass(Orders.class);
+	        
 
 	        return sessionBuilder.buildSessionFactory();
 	    }
@@ -44,7 +49,7 @@ public class HibernateConfig
 	    public DataSource dataSource() {
 	        DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	        dataSource.setDriverClassName("org.h2.Driver");
-	        dataSource.setUrl("jdbc:h2:tcp://localhost/~/EcomDb");
+	        dataSource.setUrl("jdbc:h2:tcp://localhost/~/EcomDb1");
 
 	        dataSource.setUsername("sa");
 	        dataSource.setPassword("");

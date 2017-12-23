@@ -8,17 +8,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>SupplierUp</title>
 </head>
-<body>
+<body style="background-image: url('${pageContext.request.contextPath}/resources/backgd.jpg');">
 <jsp:include page="Header.jsp"></jsp:include>
 
 <div class="container">
 <div class="row">
-<form id="Supplier" action="UpdateSup" method="post" role="form" style="display: block;">
+<form id="Supplier" action="editSup" method="post" role="form" style="display: block;">
 <div class="form-group">
-<input type="text" name="SupName" id="SupName" tabindex="2" class="form-control" placeholder="${supp.SupName }">
+<input type="text" name="SupName" id="SupName" tabindex="2" class="form-control" placeholder="${supp.supName }">
 </div>
 <div class="form-group">
-<input type="text" name="SupAddress" id="SupAddress" tabindex="2" class="form-control" placeholder="${supp.SupAddress }">
+<input type="text" name="SupAddress" id="SupAddress" tabindex="2" class="form-control" placeholder="${supp.supAddress }">
 <input type="hidden" name="supId" value="${supp.supId }"> 
 </div>
 <div class="col-sm-6 col-sm-offset-3">
@@ -27,6 +27,7 @@
 </form>
 </div>
 </div>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 <jsp:include page="Footer.jsp"></jsp:include>
 
 </body>

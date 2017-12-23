@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <jsp:include page="Header.jsp"></jsp:include>
-<body>
+<body style="background-image: url('${pageContext.request.contextPath}/resources/coverpic.jpg');">
 
 <style>
 input[type=text], input[type=password] {
@@ -59,12 +59,10 @@ button {
 </style>
 <body>
 
-<h2>Signup Form</h2>
+<h2>Signup</h2>
 
-<form action="/action_page.php" style="border:1px solid #ccc">
+<form action="saveUser" style="border:1px solid #ccc" method="post">
   <div class="container">
-    <label><b>User Name</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
     <label><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
     <label><b>Residential Address</b></label>

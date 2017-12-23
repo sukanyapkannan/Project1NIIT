@@ -5,10 +5,12 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.niit.BooksWorldBackend.DAO.UserDao;
+import com.niit.BooksWorldBackend.model.Supplier;
 import com.niit.BooksWorldBackend.model.User;
 
 @Repository
-public class UserDaoImpl 
+public class UserDaoImpl  implements UserDao
 {
 	@Autowired
 	private SessionFactory sessionF;
@@ -36,9 +38,11 @@ public class UserDaoImpl
 		
 	}
 
-	public User getUser(String mailid) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUser(String mailid) 
+	{
+		Session k=sessionF.openSession();
+		User c=(User)k.get(User.class, mailid);
+		return c;
 	}
 
 

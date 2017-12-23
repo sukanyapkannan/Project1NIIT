@@ -1,5 +1,6 @@
 package com.niit.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -7,27 +8,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.BooksWorldBackend.DAO.CategoryDao;
+
 @Controller
 public class HomeController 
 {
+	@Autowired
+	CategoryDao catDao;
 	@RequestMapping("/")
-	String index()
+	String index(Model m)
 	{
 		System.out.println("Login");
+		m.addAttribute("clist", catDao.getCategorys());
 		return "BooksWorldHomePage";
+		
 	}
 	@RequestMapping("/SignUp")
 	String sign(Model m)
 	{
-		m.addAttribute("msg", "This is Registration Page..............");
 		
+		m.addAttribute("clist", catDao.getCategorys());
 		return "SignUpPage";
 	}
 	
 	@RequestMapping("/Login")
 	String Login(Model m)
 	{
-		//m.addAttribute("msg", "This is Registration Page..............");
+		m.addAttribute("clist", catDao.getCategorys());
 		
 		return "LoginPage";
 	}

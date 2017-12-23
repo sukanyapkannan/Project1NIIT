@@ -14,4 +14,5 @@ void updateCategory(Category c);
 void deleteCategory(Category c);
 List<Category> getCategorys();
 Category getCategory(int catId);
+
 }

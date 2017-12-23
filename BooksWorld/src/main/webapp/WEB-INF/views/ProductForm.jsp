@@ -13,7 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Product Form</title>
 </head>
-<body>
+<body style="background-image: url('${pageContext.request.contextPath}/resources/backgd.jpeg');">
 <jsp:include page="Header.jsp"></jsp:include>
 
 <div class="container">
@@ -39,16 +39,16 @@
 Product Image
 <input type="file" name="img">
 </div>
+<div class="form-group">
+${clist }
+     <select name="cid">
+     
+        <c:forEach items="${clist }" var="c">
+      <option><a href="#">${c.catName}</a></option>
+          </c:forEach>
+      </select>
 
-<td>Category</td>
-<c:forEach items="${clist }" var="c">
-
-<td><select name="Category" >
-         <option value="${c.catName }" ></option>
-     </select></td>
-
-</c:forEach>
-
+ </div>
 
 
 <c:forEach items="${plist }" var="c">
@@ -82,12 +82,10 @@ Product Image
 </c:forEach>
 
 
+</table>
+</div>
 </div>
 
-
-</div>
-
-</div>
 <jsp:include page="Footer.jsp"></jsp:include>
 
 </body>

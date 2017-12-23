@@ -15,17 +15,12 @@ public class User
 {
 	private static final long serialVersionUID = 1L;
 	@Id
-	private String username;
 	private String email;
 	private String password;
 	private String Address;
 	private long phone;
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
+	private String role;
+	
 	public String getEmail() {
 		return email;
 	}
@@ -52,6 +47,12 @@ public class User
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 }

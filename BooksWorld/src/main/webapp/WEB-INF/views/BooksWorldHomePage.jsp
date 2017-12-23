@@ -14,7 +14,7 @@ body {font-family: Verdana,sans-serif;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 500px;
   position: relative;
   margin: auto;
 }
@@ -73,7 +73,7 @@ body {font-family: Verdana,sans-serif;}
 }
 
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 200px) {
   .text {font-size: 11px}
 }
 </style>
