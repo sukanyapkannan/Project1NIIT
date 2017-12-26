@@ -7,13 +7,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <jsp:include page="Header.jsp"></jsp:include>
+ 
 </head>
 
 
-<body  style="background-image: url('${pageContext.request.contextPath}/resources/backgd.jpg');">
-
+<body  style="background-image: url('${pageContext.request.contextPath}/resources/wall.jpg');">
+ <jsp:include page="Header.jsp"></jsp:include>
     	<div class="container">
+    	
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-login">
@@ -187,16 +188,8 @@
 }
 	
 	</style>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+	
+	</br></br></br></br></br></br></br></br>
 	<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

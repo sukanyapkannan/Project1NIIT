@@ -15,15 +15,15 @@
 <nav class="navbar navbar-inverse" >
 
     <div class="navbar-header">
-      <a class="navbar-brand" href="./">BOOKS WORLD</a>
+      <a class="navbar-brand" href="${pageContext.request.contextPath}/">BOOKS WORLD</a>
     </div>
     
     <ul class="nav navbar-nav">
       <c:if test="${pageContext.request.userPrincipal.name  != 'admin123@gmail.com'}">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="Category">Categories<span class="caret"></span></a>
+      <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" href="Category">Categories<span class="caret"></span></a>
         <ul class="dropdown-menu">
         <c:forEach items="${clist }" var="c">
-          <li><a href="proList?catId=${c.catId }">${c.catName}</a></li>
+          <li><a href="${pageContext.request.contextPath}/proList?catId=${c.catId }">${c.catName}</a></li>
           </c:forEach>
         </ul>
       </li>
@@ -32,30 +32,26 @@
     		<li><a href="Admin">Admin Action</a></li>
      </c:if>
      
-    <c:if test="${pageContext.request.userPrincipal.name  != null}">
-    <li><a href="ProductList">Product List</a></li>
+    <c:if test="${pageContext.request.userPrincipal.name  != null && pageContext.request.userPrincipal.name !='admin123@gmail.com' }">
+    <li><a href="Cart?status=">Cart</a></li>
     </c:if>
     </ul>
     
     <ul class="nav navbar-nav navbar-right">
     
+     
        <c:if test="${pageContext.request.userPrincipal.name == null }">
       		  <li><a href="SignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
        </c:if>
        <c:if test="${pageContext.request.userPrincipal.name == null }">
      		  <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
        </c:if>
+    
        <c:if test="${pageContext.request.userPrincipal.name  != null}">
 					<li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
-      		  <li><a href="j_spring_security_logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      		  <li><a href="${pageContext.request.contextPath}/j_spring_security_logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
        </c:if>
-    </ul>
-       <p>
-        <button type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
-        </button>
-      </p>
-  
+   </ul>
 </nav>
 
 <style>

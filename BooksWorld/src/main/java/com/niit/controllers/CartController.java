@@ -102,7 +102,13 @@ public class CartController
 		return mv;
   	}
 	
-
+	@RequestMapping("/Cart")
+  	public String ToCart(@RequestParam("status") String status,Model m)
+  	{
+		m.addAttribute("status", status);
+		return "redirect://user/Cart";
+		
+  	}
 	@RequestMapping("/user/Cart")
   	public ModelAndView goToCart(@RequestParam("status") String status)
   	{
@@ -142,11 +148,12 @@ public class CartController
         return "redirect:/user/Cart";
     }
 	
+	
 	@RequestMapping(value="/user/updateCart",method=RequestMethod.POST)
     public String updateCart(@RequestParam("cid") int cartId,@RequestParam("qty") int qty,Model m)
     {
 		Cart c=cartDao.getCartItem(cartId);
-		/*System.out.println("Qty:-------------------------"+qty+"\nProduct Qty : "+c);*/
+		
 		if(c.getProduct().getQuantity()>=qty)
 		{
 		c.setCartQnty(qty);

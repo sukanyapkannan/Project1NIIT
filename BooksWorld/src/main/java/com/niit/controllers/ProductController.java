@@ -32,14 +32,7 @@ CategoryDao cDao;
 
 @Autowired
 SupplierDao sDao;
-@RequestMapping(value="/admin/ProductForm")
-String Product(Model m)
-{
-	List<Product> plist=(List<Product>) proDao.getProducts();
-	System.out.println(plist);
-	m.addAttribute("plist", proDao.getProducts());
-	return "ProductForm";
-}
+
 @RequestMapping(value="/admin/saveProduct")
 String saveProduct(@RequestParam("productname")String productname,@RequestParam("productDescription")String productDescription,@RequestParam("price")double price,@RequestParam("quantity")int quantity,@RequestParam("cid")int cid,@RequestParam("sid")int sid,@RequestParam("img")MultipartFile file)
 {
@@ -78,6 +71,8 @@ String UpdateProduct(@RequestParam("id") int id,Model m)
 {
 	Product s=proDao.getProduct(id);
 	m.addAttribute("Prod", s);
+	m.addAttribute("clist", cDao.getCategorys());
+	m.addAttribute("slist", sDao.getSuppliers());
 	return "ProductUp";
 }
 @RequestMapping(value="/admin/EditProduct")

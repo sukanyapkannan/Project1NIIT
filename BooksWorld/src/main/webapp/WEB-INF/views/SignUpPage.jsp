@@ -8,9 +8,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<jsp:include page="Header.jsp"></jsp:include>
-<body style="background-image: url('${pageContext.request.contextPath}/resources/coverpic.jpg');">
 
+<body style="background-image: url('${pageContext.request.contextPath}/resources/wall.jpg');">
+<jsp:include page="Header.jsp"></jsp:include>
 <style>
 input[type=text], input[type=password] {
     width: 100%;

@@ -73,7 +73,7 @@
 
 
 <jsp:include page="Header.jsp"></jsp:include>
-<body style="background-image: url('${pageContext.request.contextPath}/resources/backgd.jpeg');">
+<body style="background-image: url('${pageContext.request.contextPath}/resources/light.jpg');">
 
 <div class="container">
 
@@ -113,6 +113,7 @@ $(document).ready(function() {
 });
 
 </script>
+</br></br></br></br></br></br></br>
 <jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

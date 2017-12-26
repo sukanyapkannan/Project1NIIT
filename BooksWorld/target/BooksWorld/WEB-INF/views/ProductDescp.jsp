@@ -185,7 +185,7 @@ img {
 </style>
 
 
-<body>
+<body style="background-image: url('${pageContext.request.contextPath}/resources/light.jpg');">
 <jsp:include page="Header.jsp"></jsp:include>
 <div class="container">
 		<div class="card">

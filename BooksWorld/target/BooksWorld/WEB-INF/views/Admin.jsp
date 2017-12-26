@@ -10,7 +10,7 @@
 
 <title>Admin</title>
 </head>
-<body style="background-image: url('${pageContext.request.contextPath}/resources/backgd.jpg');">
+<body style="background-image: url('${pageContext.request.contextPath}/resources/4.jpeg');">
 <jsp:include page="Header.jsp"></jsp:include>
 <div class="container">
 
@@ -19,7 +19,7 @@
  	 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#cat">Category</a></li>
     <li><a data-toggle="tab" href="#sup">Publisher</a></li>
-    <li><a data-toggle="tab" href="#pro">Book</a></li>
+    <li><a data-toggle="tab" href="#pro">Books</a></li>
     
     </ul>
 

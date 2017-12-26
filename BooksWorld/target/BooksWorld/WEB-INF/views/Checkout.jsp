@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>checkout</title>
 </head>
 <jsp:include page="Header.jsp"></jsp:include>
 <body>
@@ -20,11 +20,11 @@
                     </h2>
                     <hr/>
                     <hr/>
-                   <c:set var="gtot" value="0"></c:set>
+							 <c:set var="gtot" value="0"></c:set>
 							 <c:forEach var="c" items="${Cart}">
 						     <c:set var="gtot" value="${gtot+c.product.price*c.cartQnty}"></c:set>
 							</c:forEach>
-                    <div class="shopping_cart">
+							s<div class="shopping_cart">
                         <form class="form-horizontal" role="form" action="" method="post" id="payment-form">
                             <div class="panel-group" id="accordion">
                                 <div class="panel panel-default">
@@ -48,7 +48,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                
                 <c:forEach var="c" items="${Cart}">
                     <tr>
                         <td class="col-sm-8 col-md-6">
@@ -57,51 +56,34 @@
                             <div class="media-body">
                                 <h4 class="media-heading"><a href="#">${c.product.productname}</a></h4>
                                 <h5 class="media-heading"> by <a href="#">${c.product.supplier.supName}</a></h5>
-                               
-                            </div>
+                                </div>
                         </div></td>
-                     
                         <td class="col-sm-1 col-md-1" style="text-align: center">
                          ${c.cartQnty}
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>${c.product.price}</strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>${c.cartQnty*c.product.price}</strong></td>
                         <td class="col-sm-1 col-md-1">
-                        
        				    </td>
-					
                         </tr>
-                    <tr>
-                        
-                        
-                       
+                    <tr> 
                     </tr>
-                    
-                   
                     </c:forEach>
-                   
                     <tr>
-                       
-                        <tr>
-                        
-                    </tr>
-                    
-                </tbody>
-                                                    </table>
+                    <tr>
+                        </tr>
+                    </tbody>
+                     </table>
                                                 </div>
-                                                
                                                 <div class="col-md-3">
                                                     <div style="text-align: center;">
                                                         <h3>Order Total</h3>
                                                         <h3><span style="color:green;">${gtot}</span></h3>
                                                     </div>
                                                 </div>
-                                              
-                                                
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
                             <div class="panel panel-default">
@@ -132,27 +114,44 @@
                                         <table class="table table-striped" style="font-weight: bold;">
                                             <tr>
                                                 <td style="width: 175px;">
-                                                    <label for="id_email">Email:</label></td>
+                                                    <label for="id_email">Best Email:</label></td>
                                                 <td>
                                                     <input class="form-control" id="id_email" name="email"
-                                                           required="required" type="text" value="${User.email}"/>
+                                                           required="required" type="text"/>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 175px;">
-                                                    <label for="id_name">Name:</label></td>
-                                               
+                                                    <label for="id_first_name">First name:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_first_name" name="first_name"
+                                                           required="required" type="text"/>
+                                                </td>
                                             </tr>
-                                           
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_last_name">Last name:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_last_name" name="last_name"
+                                                           required="required" type="text"/>
+                                                </td>
+                                            </tr>
                                             <tr>
                                                 <td style="width: 175px;">
                                                     <label for="id_address_line_1">Address:</label></td>
                                                 <td>
                                                     <input class="form-control" id="id_address_line_1"
-                                                           name="address" required="required" type="text" value="${User.address}"/>
+                                                           name="address_line_1" required="required" type="text"/>
                                                 </td>
                                             </tr>
-                                           
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_address_line_2">Unit / Suite #:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_address_line_2"
+                                                           name="address_line_2" type="text"/>
+                                                </td>
+                                            </tr>
                                             <tr>
                                                 <td style="width: 175px;">
                                                     <label for="id_city">City:</label></td>
@@ -165,8 +164,59 @@
                                                 <td style="width: 175px;">
                                                     <label for="id_state">State:</label></td>
                                                 <td>
-                                           <input class="form-control" id="id_state" name="state"
-                                                           required="required" type="text"/>
+                                                    <select class="form-control" id="id_state" name="state">
+                                                        <option value="AK">Alaska</option>
+                                                        <option value="AL">Alabama</option>
+                                                        <option value="AZ">Arizona</option>
+                                                        <option value="AR">Arkansas</option>
+                                                        <option value="CA">California</option>
+                                                        <option value="CO">Colorado</option>
+                                                        <option value="CT">Connecticut</option>
+                                                        <option value="DE">Delaware</option>
+                                                        <option value="FL">Florida</option>
+                                                        <option value="GA">Georgia</option>
+                                                        <option value="HI">Hawaii</option>
+                                                        <option value="ID">Idaho</option>
+                                                        <option value="IL">Illinois</option>
+                                                        <option value="IN">Indiana</option>
+                                                        <option value="IA">Iowa</option>
+                                                        <option value="KS">Kansas</option>
+                                                        <option value="KY">Kentucky</option>
+                                                        <option value="LA">Louisiana</option>
+                                                        <option value="ME">Maine</option>
+                                                        <option value="MD">Maryland</option>
+                                                        <option value="MA">Massachusetts</option>
+                                                        <option value="MI">Michigan</option>
+                                                        <option value="MN">Minnesota</option>
+                                                        <option value="MS">Mississippi</option>
+                                                        <option value="MO">Missouri</option>
+                                                        <option value="MT">Montana</option>
+                                                        <option value="NE">Nebraska</option>
+                                                        <option value="NV">Nevada</option>
+                                                        <option value="NH">New Hampshire</option>
+                                                        <option value="NJ">New Jersey</option>
+                                                        <option value="NM">New Mexico</option>
+                                                        <option value="NY">New York</option>
+                                                        <option value="NC">North Carolina</option>
+                                                        <option value="ND">North Dakota</option>
+                                                        <option value="OH">Ohio</option>
+                                                        <option value="OK">Oklahoma</option>
+                                                        <option value="OR">Oregon</option>
+                                                        <option value="PA">Pennsylvania</option>
+                                                        <option value="RI">Rhode Island</option>
+                                                        <option value="SC">South Carolina</option>
+                                                        <option value="SD">South Dakota</option>
+                                                        <option value="TN">Tennessee</option>
+                                                        <option value="TX">Texas</option>
+                                                        <option value="UT">Utah</option>
+                                                        <option value="VT">Vermont</option>
+                                                        <option value="VA">Virginia</option>
+                                                        <option value="WA">Washington</option>
+                                                        <option value="DC">Washington D.C.</option>
+                                                        <option value="WV">West Virginia</option>
+                                                        <option value="WI">Wisconsin</option>
+                                                        <option value="WY">Wyoming</option>
+                                                    </select>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -181,14 +231,7 @@
                                                 <td style="width: 175px;">
                                                     <label for="id_phone">Phone:</label></td>
                                                 <td>
-                                                    <input class="form-control" id="id_phone" name="phone" type="text" value="${User.phone}"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 175px;">
-                                                    <label for="id_country">Country:</label></td>
-                                                <td>
-                                                    <input class="form-control" id="id_country" name="country" type="text" value="${User.country}"/>
+                                                    <input class="form-control" id="id_phone" name="phone" type="text"/>
                                                 </td>
                                             </tr>
 
@@ -221,7 +264,7 @@
                                     <div class="panel-body">
                                         <span class='payment-errors'></span>
                                         <fieldset>
-                                          
+                                            <legend>What method would you like to pay with today?</legend>
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label" for="card-holder-name">Name on
                                                     Card</label>
@@ -295,11 +338,16 @@
                                                     </div>
                                                 </div>
                                         </fieldset>
-                                        <input type="hidden" value="${gtot}" name="total"/>
-                                        <button type="submit" class="btn btn-success btn-lg" style="width:100%;">Invoice
+                                        <button type="submit" class="btn btn-success btn-lg" style="width:100%;">Pay
+                                            Now
                                         </button>
                                         <br/>
-                                       
+                                        <div style="text-align: left;"><br/>
+                                            By submiting this order you are agreeing to our <a href="/legal/billing/">universal
+                                                billing agreement</a>, and <a href="/legal/terms/">terms of service</a>.
+                                            If you have any questions about our products or services please contact us
+                                            before placing this order.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -309,6 +357,7 @@
             </div>
         </div>
     </div>
-  
+
+
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Cart</title>
 </head>
 
 
@@ -58,7 +58,7 @@
 
 
 
-<body style="background-image: url('${pageContext.request.contextPath}/resources/backgd.jpeg');">
+<body style="background-image: url('${pageContext.request.contextPath}/resources/light.jpg');">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <jsp:include page="Header.jsp"></jsp:include>
 
@@ -95,9 +95,10 @@
                            <form action="updateCart" method="post">
                            <input type="hidden" name="cid" value="${c.cartID}"/>
                            <input type="number" class="form-control text-center" id="exampleInputEmail1" name="qty" value="${c.cartQnty}" min="1"><br/>
-                           <button type="submit" class="btn btn-info btn-sm">
-         					<span class="fa fa-refresh"></span>Refresh
+                           <button type="submit" >
+         					 <span class="glyphicon glyphicon-refresh"></span>
        				       </button>
+       				       
        				    	</form>
                         </td>
 							
@@ -105,7 +106,7 @@
 							 <td class="col-sm-1 col-md-1 text-center"><strong>${c.cartQnty*c.product.price}</strong></td>
 							<td data-th="Subtotal" class="text-center"></td>
 							
-                        <td><a href="deleteCart/${c.cartID}" class="btn btn-lg btn-danger"><span class="fa fa-trash-o">Delete</span></a>
+                        <td><a href="deleteCart/${c.cartID}" > <span class="glyphicon glyphicon-trash"></span></a>
                         
        				    </td>
 							
@@ -121,15 +122,7 @@
 					
 					<tfoot>
 				
-                   <!--  <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Estimated shipping</h5></td>
-                        <td class="text-right"><h5><strong></strong></h5></td>
-                    </tr> -->
-                   
+                
                     <tr>
                         <td>   </td>
                         <td>   </td>
@@ -158,8 +151,7 @@
 					</tfoot>
 				</table>
 </div>
-<br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</br></br></br></br></br></br>
 <jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

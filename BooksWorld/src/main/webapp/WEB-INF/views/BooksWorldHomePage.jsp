@@ -89,20 +89,20 @@ body {font-family: Verdana,sans-serif;}
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="${pageContext.request.contextPath}/resources/1.jpg" style="width:100%">
+  <img src="${pageContext.request.contextPath}/resources/1.jpg" style="width:1800px; height:500px">
   <div class="text">1</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="${pageContext.request.contextPath}/resources/2.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
+  <img src="${pageContext.request.contextPath}/resources/2.jpg" style="width:1800px; height:500px">
+  <div class="text">2</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="${pageContext.request.contextPath}/resources/3.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
+  <img src="${pageContext.request.contextPath}/resources/3.jpg" style="width:1800px; height:500px"s>
+  <div class="text">3</div>
 </div>
 
 

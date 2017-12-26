@@ -8,7 +8,7 @@
 <title>checkout</title>
 </head>
 <jsp:include page="Header.jsp"></jsp:include>
-<body>
+<body style="background-image: url('${pageContext.request.contextPath}/resources/light.jpg');">
 <form action="invoiceProcess" method="post">
  <div class='container'>
     <div class='row' style='padding-top:25px; padding-bottom:25px;'>
@@ -165,7 +165,7 @@
                                                     <label for="id_state">State:</label></td>
                                                 <td>
                                                     <select class="form-control" id="id_state" name="state">
-                                                        <option value="AK">Alaska</option>
+                                                        <option value="AK">Kerala</option>
                                                         <option value="AL">Alabama</option>
                                                         <option value="AZ">Arizona</option>
                                                         <option value="AR">Arkansas</option>
